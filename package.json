@@ -1,6 +1,6 @@
 {
   "name": "baileys-mbuilder",
-  "version": "4.5.0",
+  "version": "4.5.0-custom",
   "description": "Baileys Mbuilder By Nixel - Advanced WhatsApp Interactive Message Builder for Baileys",
   "main": "index.js",
   "type": "module",
@@ -17,23 +17,23 @@
     "native-flow",
     "interactive-message"
   ],
-  "author": "FongsiDev",
+  "author": "FgsiDev",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FongsiDev/baileys-messagebuilder.git"
+    "url": "git+https://github.com/FgsiDev/baileys-messagebuilder.git"
   },
   "publishConfig": {
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/FongsiDev/baileys-messagebuilder/issues"
+    "url": "https://github.com/FgsiDev/baileys-messagebuilder/issues"
   },
-  "homepage": "https://github.com/FongsiDev/baileys-messagebuilder",
+  "homepage": "https://github.com/FgsiDev/baileys-messagebuilder",
   "dependencies": {
     "sharp": "^0.33.0"
   },
   "peerDependencies": {
-    "baileys": ">=7.0.0"
+    "baileys": "*"
   }
 }
