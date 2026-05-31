@@ -2,10 +2,17 @@
   "name": "baileys-mbuilder",
   "version": "4.5.2-cjs",
   "description": "Baileys Mbuilder By Nixel - Advanced WhatsApp Interactive Message Builder for Baileys",
-  "main": "./index.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
+    }
+  },
   "scripts": {
-    "postinstall": "node index.js --install",
-    "update": "node index.js --update"
+    "postinstall": "node lib/index.js --install",
+    "update": "node lib/index.js --update"
   },
   "keywords": [
     "baileys",
