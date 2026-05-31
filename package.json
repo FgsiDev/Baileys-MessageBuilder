@@ -1,6 +1,6 @@
 {
   "name": "baileys-mbuilder",
-  "version": "4.5.2-cjs",
+  "version": "4.5.3-cjs",
   "description": "Baileys Mbuilder By Nixel - Advanced WhatsApp Interactive Message Builder for Baileys",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",

@@ -29,9 +29,9 @@
 
 const VERSION = "4.5";
 
-//import { generateWAMessageFromContent, prepareWAMessageMedia } from 'baileys';
-//import crypto from 'crypto';
-//import sharp from 'sharp';
+import { generateWAMessageFromContent, prepareWAMessageMedia } from 'baileys';
+import crypto from 'crypto';
+import sharp from 'sharp';
 
 function extractIE(
   text,
