@@ -27,15 +27,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FgsiDev/baileys-messagebuilder.git"
+    "url": "git+https://github.com/FgsiDev/baileys-mbuilder.git"
   },
   "publishConfig": {
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/FgsiDev/baileys-messagebuilder/issues"
+    "url": "https://github.com/FgsiDev/baileys-mbuilder/issues"
   },
-  "homepage": "https://github.com/FgsiDev/baileys-messagebuilder",
+  "homepage": "https://github.com/FgsiDev/baileys-mbuilder",
   "dependencies": {
     "sharp": "^0.33.0"
   },
