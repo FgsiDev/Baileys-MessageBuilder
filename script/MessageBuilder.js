@@ -29,9 +29,9 @@
 
 const VERSION = "4.5";
 
-import { generateWAMessageFromContent, prepareWAMessageMedia } from "baileys";
-import crypto from "crypto";
-import sharp from "sharp";
+const { generateWAMessageFromContent, prepareWAMessageMedia } = global.baileys || require("baileys");
+const crypto = require("crypto");
+const sharp = require("sharp");
 
 function extractIE(
   text,
@@ -1626,4 +1626,4 @@ class AIRich extends BaseBuilder {
   }
 }
 
-export { VERSION, Button, ButtonV2, Carousel, AIRich };
+module.exports = { VERSION, Button, ButtonV2, Carousel, AIRich };
