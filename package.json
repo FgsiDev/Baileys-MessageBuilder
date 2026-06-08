@@ -1,6 +1,6 @@
 {
   "name": "baileys-mbuilder",
-  "version": "4.5.0-lts",
+  "version": "4.6.0-lts",
   "description": "Baileys Mbuilder By Nixel - Advanced WhatsApp Interactive Message Builder for Baileys",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",
@@ -37,7 +37,9 @@
   },
   "homepage": "https://github.com/FgsiDev/baileys-messagebuilder",
   "dependencies": {
-    "sharp": "^0.33.0"
+    "fluent-ffmpeg": "*",
+    "sharp": "^0.33.0",
+    "stream": "*"
   },
   "optionalDependencies": {
     "baileys": "*"
