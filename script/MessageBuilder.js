@@ -2537,6 +2537,8 @@ function bind(client) {
   }
   let sock = Object.defineProperties(client, {
     sendLinkPreview: {
+      configurable: true,
+      writable: true,
       async value(
         jid,
         text,
