@@ -2531,4 +2531,75 @@ class AIRich extends BaseBuilder {
   }
 }
 
-module.exports = { VERSION, Button, ButtonV2, Carousel, AIRich, Toolkit };
+function bind(client) {
+  if (!client) {
+    throw new Error("Socket is required");
+  }
+  let sock = Object.defineProperties(client, {
+    sendLinkPreview: {
+      async value(
+        jid,
+        text,
+        link,
+        title,
+        description,
+        thumbnail,
+        options = {},
+      ) {
+        if (typeof jid !== "string") {
+          throw new TypeError("jid is not string");
+        }
+        if (typeof text !== "string") {
+          throw new TypeError("text is not string");
+        }
+        if (typeof link !== "string") {
+          throw new TypeError("link is not string");
+        }
+        if (typeof title !== "string") {
+          throw new TypeError("title is not string");
+        }
+        if (description && typeof description !== "string") {
+          throw new TypeError("description is not string");
+        }
+        if (
+          thumbnail &&
+          !Buffer.isBuffer(thumbnail) &&
+          typeof thumbnail.url !== "string"
+        ) {
+          throw new TypeError(
+            "thumbnail must be Buffer or object with url key",
+          );
+        }
+        const image = thumbnail
+          ? await prepareWAMessageMedia(
+              {
+                image: thumbnail,
+              },
+              {
+                upload: socket.waUploadToServer,
+                mediaTypeOverride: "thumbnail-link",
+              },
+            ).then((v) => v.imageMessage)
+          : undefined;
+        text = text.includes(link) ? text : `${link}\n${text}`;
+        return await client.sendMessage(
+          jid,
+          {
+            text,
+            linkPreview: {
+              "matched-text": link,
+              title,
+              description,
+              jpegThumbnail: image?.jpegThumbnail,
+              highQualityThumbnail: image,
+            },
+          },
+          options,
+        );
+      },
+    },
+  });
+  return (client = sock);
+}
+
+module.exports = { VERSION, Button, ButtonV2, Carousel, AIRich, Toolkit, bind };
