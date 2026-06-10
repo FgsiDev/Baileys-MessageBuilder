@@ -2576,7 +2576,7 @@ function bind(client) {
                 image: thumbnail,
               },
               {
-                upload: socket.waUploadToServer,
+                upload: client.waUploadToServer,
                 mediaTypeOverride: "thumbnail-link",
               },
             ).then((v) => v.imageMessage)
